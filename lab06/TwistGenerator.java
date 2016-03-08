@@ -13,17 +13,19 @@ public class TwistGenerator{
         
         Scanner myScanner=new Scanner (System.in); 
         System.out.println("Provide a positive integer for length: ");
-        int length = 0; 
+        int length = 0;  
         
         while (!myScanner.hasNextInt()){
             System.out.println("Length must be an interger"); 
-            myScanner.next(); 
-            while (length<0){
-                System.out.println("Length must be positive"); 
-                myScanner.next();
-            }
+           myScanner.next(); 
+           
         }
         length = myScanner.nextInt(); 
+        
+        while (length<0){
+                System.out.println("Length must be positive"); 
+                length = myScanner.nextInt();
+            }
         int counter = 1; 
         
         while(counter <= length){ 
@@ -63,5 +65,6 @@ public class TwistGenerator{
             }
             counter++; 
         }
+        System.out.println(); 
     }
 }

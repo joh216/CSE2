@@ -26,7 +26,20 @@ public class RunFactorial{
                 value = myScanner.nextInt();
             }
             
+            int value3 = value; 
+            int value2 = 0; 
+            System.out.println("Input accepted: "); 
+            value2 = value * (value-1); 
+            value--; 
+            value--;
             
+            
+            while (value > 0){
+                value2=value2*(value);
+                value--; 
+            }
+            
+            System.out.println(value3 + "! = " + value2); 
             
     }
 }

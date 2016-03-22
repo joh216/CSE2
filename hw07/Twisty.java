@@ -42,5 +42,30 @@ public class Twisty{
             width = myScanner.nextInt(); //seeing if width is positive and less than length
         }
         
+        int x = 1, y = 1; 
+        
+        while (y<=width){
+            x=1; 
+        while (x<=length){
+            if (x%(2*width) == y){
+                System.out.print("#"); 
+            }
+            else if (x%(2*width)==width){
+                System.out.print("/"); 
+            }
+            else if (x%(2*width)==(width+y)){
+                System.out.print("\\"); 
+            }
+            else if (x%(2*width)==(width-y)){
+                System.out.print("#");
+            }
+            else{
+                System.out.print(" "); 
+            }
+            x++; 
+        }
+        y++; 
+        System.out.println(); 
     }
+}
 }

@@ -8,7 +8,7 @@ and use a break statement
 
 import java.util.Scanner; 
 
-public class BowTie{
+public class Bowtie{
     public static void main(String[] args){
         
         Scanner myScanner=new Scanner (System.in); 
@@ -22,7 +22,7 @@ public class BowTie{
         nStars = myScanner.nextInt(); 
         
         while (nStars<3 || nStars>33 || nStars%2!=1){
-            System.out.println("Error: please type in an integer between 3 and 33"); 
+            System.out.println("Error: please type in an odd integer between 3 and 33"); 
             nStars = myScanner.nextInt(); //seeing if integer is between 3 and 33
         }
         

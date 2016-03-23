@@ -43,29 +43,35 @@ public class Twisty{
         }
         
         int x = 1, y = 1; 
+        int divide = x/width;
+        int mod = x&width; 
         
-        while (y<=width){
-            x=1; 
-        while (x<=length){
-            if (x%(2*width) == y){
-                System.out.print("#"); 
+        for(y=1; y<=width; y++){ //out loop for controlling each row
+        for(x=1; x<=length; x++){ //inner loop for printing each line
+            if(x%width==y){ //if remainder = y (row number) then its print either # or \
+                divide = (x - 1) /width; //create a int divide to see if even or odd
+                if (divide%2==0){ //if even, print out #
+                    System.out.print("#"); 
+                }
+                else if(divide%2==1){ //if odd, print out \
+                    System.out.print("\\");
+                }
             }
-            else if (x%(2*width)==width){
-                System.out.print("/"); 
-            }
-            else if (x%(2*width)==(width+y)){
-                System.out.print("\\"); 
-            }
-            else if (x%(2*width)==(width-y)){
-                System.out.print("#");
+            else if ((x - 1)%width==(width-y)){ //gets upward patterns
+                divide = (x - 1)/width; //create divide to see if even or off
+                if (divide%2==0){ //if even, print out /
+                    System.out.print("/"); 
+                }
+                else if (divide%2==1){ //if odd, print out #
+                    System.out.print("#");
+                }
             }
             else{
-                System.out.print(" "); 
+                System.out.print(" "); //if not either, print out a space
             }
-            x++; 
+            }
+            System.out.println(); 
         }
-        y++; 
-        System.out.println(); 
+        
     }
-}
 }

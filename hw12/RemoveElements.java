@@ -4,7 +4,7 @@ hw12
 
 */ 
 
-import java.util.Scanner;
+import java.util.Scanner; //the following below is given besides the 3 final methods
 public class RemoveElements{
   public static void main(String [] arg){
 	Scanner scan=new Scanner(System.in);

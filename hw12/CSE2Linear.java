@@ -30,13 +30,14 @@ public class CSE2Linear{
         System.out.println("Sorted: "); 
         printArray(finalGrades); //call the sorted print method 
         
-        findGrade(finalGrades); //call find grade method
+        String result = binarySearch(finalGrades); //call binary search method
+        System.out.println(result); 
         
         scrambleGrade(finalGrades); //call scramble method
         
         printArray(finalGrades); //print the scrambled array
         
-        findGrade(finalGrades); //search for a grade in scrambled array 
+        linearSearch(finalGrades); //search for a grade in scrambled array 
         
     }
     public static int getInput(){ //method for input check
@@ -65,7 +66,31 @@ public class CSE2Linear{
     System.out.println(); 
     }
     
-    public static void findGrade(int[] array){ //method to find a specific grade
+    public static String binarySearch(int[] array){
+        Scanner scan = new Scanner (System.in); 
+        System.out.println("Enter a grade to search for: "); 
+        int grade = scan.nextInt(); 
+        int low = 0, high = 14; //set up high low for the range
+        int mid = (low+high)/2; //find mid of the range
+        int i = 1; //set up i to keep count of how many iterations
+        while(low<high){ //loop to see if input is equal to the mid
+            mid = (low+high)/2; 
+            if (array[mid]==grade){
+                return grade + " was found in the list in " + i + " iterations."; 
+            }
+            else if (grade>array[mid]){ //if input was higher than mid
+                low=mid + 1; //mid is now the new low
+                i++; //increase if not found 
+            }
+            else if (grade<array[mid]){ //if input was lower than mid
+                high=mid - 1; //mid is now the new high
+                i++; //increase if not found 
+            }
+        }
+        return grade + " was not found in " + i + " iterations.";
+    }
+    
+    public static void linearSearch(int[] array){ //method to find a specific grade
         Scanner scan = new Scanner (System.in); 
         System.out.println("Enter a grade to search for: "); 
         int grade = scan.nextInt(); 
